@@ -3,8 +3,6 @@ services:
   app:
     build:
       context: .
-      args:
-        - AUTH_KEY=${ACT_CACHE_AUTH_KEY:?Missing env var ACT_CACHE_AUTH_KEY}
     ports:
       - '8080:8080'
     volumes:

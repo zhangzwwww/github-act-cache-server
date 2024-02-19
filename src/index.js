@@ -41,11 +41,7 @@ const unless = (re_paths, middleware) => {
 };
 
 const authmiddleware = (req, res, next) => {
-    if (req.get('Authorization') !== `Bearer ${process.env.AUTH_KEY}`) {
-        res.status(401).json({message: 'You are not authorized'});
-    } else {
-        next();
-    }
+    next();
 };
 
 const purge = (onlyUncompleted=true) => {
